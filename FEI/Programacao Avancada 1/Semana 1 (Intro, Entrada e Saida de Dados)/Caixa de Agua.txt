@@ -1,0 +1,9 @@
+Vazao = int(input ('Entre com a vazao: '))
+Capacidade = int(input('Entre com a capacidade: '))
+
+Total_em_Segundos = Capacidade/Vazao
+Horas = Total_em_Segundos//3600
+Minutos = (Total_em_Segundos -Horas*3600)//60
+Segundos = Total_em_Segundos%60
+
+print('%.1f horas %.1f minutos %.1f segundos' %(Horas, Minutos, Segundos))

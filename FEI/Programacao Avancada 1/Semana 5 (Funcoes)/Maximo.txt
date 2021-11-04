@@ -1,0 +1,11 @@
+def maximo(x, y, imprime=False):
+    if imprime == False:
+        if x > y:
+            return(x)
+        else:
+            return(y)
+    else:
+        if x > y:
+            print(x)
+        else:
+            print(y)

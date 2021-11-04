@@ -1,0 +1,23 @@
+Fibonacci = []
+
+Linhas = int(input(''))
+
+for linhas in range(Linhas):
+    Lista = []
+    if linhas == 0:
+        Lista.append(0)
+    elif linhas == 1:
+        Lista.append(0)
+        Lista.append(1)
+    else:
+        X = 0
+        for X in range(linhas+1):
+            if X == 0:
+                Lista.append(0)
+            elif X == 1:
+                Lista.append(1)
+            else:
+                Lista.append((Lista[X-1]+(Lista[X-2])))
+    Fibonacci.append(Lista)
+    
+print(Fibonacci)

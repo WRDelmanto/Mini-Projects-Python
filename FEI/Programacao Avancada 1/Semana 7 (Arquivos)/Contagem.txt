@@ -1,0 +1,26 @@
+Q_Palavras = 0
+Q_Caracteres = 0
+
+Entrada = str(input(''))
+
+Arquivo = open(Entrada, 'r', encoding="utf-8")
+
+Arquivo_RL = Arquivo.readlines()
+
+Q_Linhas = len(Arquivo_RL)
+
+for Linhas in Arquivo_RL:
+    Linhas_Sep = Linhas.replace('\n', '')
+    Palavras_Sep = Linhas_Sep.split(' ')
+    
+    for Linhas in Palavras_Sep:
+        Q_Palavras = Q_Palavras + 1
+
+for Lines in Arquivo_RL:
+   Q_Caracteres = Q_Caracteres + len(Lines)
+
+Arquivo.close()
+
+print(Q_Linhas)
+print(Q_Palavras)
+print(Q_Caracteres)

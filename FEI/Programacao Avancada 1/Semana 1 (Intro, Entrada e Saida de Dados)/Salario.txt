@@ -1,0 +1,14 @@
+Ganho_por_Hora = int(input ('Ganho por hora: '))
+Horas_Mes = int(input ('Horas trabalhadas no mês: '))
+
+Valor_Sem_o_Roubo_do_governo = Ganho_por_Hora*Horas_Mes
+IR = 0.11*Valor_Sem_o_Roubo_do_governo
+INSS = 0.08*Valor_Sem_o_Roubo_do_governo
+Sindicato = 0.05*Valor_Sem_o_Roubo_do_governo
+Valor_Com_o_Roubo_do_Governo = Valor_Sem_o_Roubo_do_governo - IR - INSS - Sindicato
+
+print('+Salário bruto %.2f' %Valor_Sem_o_Roubo_do_governo)
+print('-IR %.2f' %IR)
+print('-INSS %.2f' %INSS)
+print('-Sindicato %.2f' %Sindicato)
+print('= Salário líquido %.2f' %Valor_Com_o_Roubo_do_Governo)

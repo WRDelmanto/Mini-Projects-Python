@@ -1,0 +1,14 @@
+def somatorio(Entrada):
+    Somatorio = 0
+    
+    Arquivo = open(Entrada, 'r')
+    
+    for Linha in Arquivo.readlines():
+        Linha = Linha.split(' ')
+
+        for Elemento in Linha:
+            Somatorio = Somatorio + int(Elemento)
+    
+    Arquivo.close()
+    
+    return Somatorio

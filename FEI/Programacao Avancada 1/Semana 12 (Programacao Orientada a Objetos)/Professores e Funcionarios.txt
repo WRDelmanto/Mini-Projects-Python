@@ -1,0 +1,49 @@
+class Funcionario:
+    Cargo = ''
+    CPF = ''
+    Nome = ''
+    Idade = 0
+    Salario = 0.0
+    Departamento = ''
+    Disciplinas_Lescionadas = ''
+    
+    def __init__(self, Cargo = '', CPF = '', Nome = '', Idade = 0, Salario = 0.0, Departamento = '', Disciplinas_Lescionadas = ''):
+        self.Cargo = Cargo
+        self.CPF = CPF
+        self.Nome = Nome
+        self.Idade = Idade
+        self.Salario = Salario
+        
+        if self.Cargo == 'Funcionario':
+            print('------------------------------------')
+            print('Funcionario Adicionado: ', self.Nome)
+            print('------------------------------------')
+        else:
+            Professor.__init__(self, Cargo = self.Cargo, CPF = self.CPF, Nome = self.Nome, Idade = self.Idade, Salario = self.Salario, Departamento = '', Disciplinas_Lescionadas = '')
+        
+class Professor:
+    Cargo = ''
+    CPF = ''
+    Nome = ''
+    Idade = 0
+    Salario = 0.0
+    Departamento = ''
+    Disciplinas_Lescionadas = ''
+    
+    def __init__(self, Cargo = '', CPF = '', Nome = '', Idade = 0, Salario = 0.0, Departamento = '', Disciplinas_Lescionadas = ''):
+        self.CPF = CPF
+        self.Nome = Nome
+        self.Idade = Idade
+        self.Salario = Salario
+        self.Departamento = Departamento
+        self.Disciplinas_Lescionadas = Disciplinas_Lescionadas
+        print('------------------------------------')
+        print('Professor   Adicionado: ', self.Nome)
+        print('------------------------------------')
+    
+
+Func1 = Funcionario('Funcionario', '12', 'Reinaldo', 18, 1000.00)
+Func2 = Funcionario('Funcionario', '45', 'William', 25, 150.00)
+
+Prof1 = Funcionario('Professor', '78', 'Thiago', 56, 800.00, 'Eng. Eletrica', 'Aula 1 e Aula 2')
+Prof2 = Funcionario('Professor', '56', 'Tesla', 45, 8900.00, 'Eng. Mecanica', 'Aula 3 e Aula 4')

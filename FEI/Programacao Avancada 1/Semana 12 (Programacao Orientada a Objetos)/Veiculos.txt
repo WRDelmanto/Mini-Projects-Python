@@ -1,0 +1,121 @@
+class Veiculo:
+    Peso = 0
+    VelMax = 0
+    Preco = 0.0
+    
+    def Get(self, Peso = 0, VelMax = 0, Preco = 0.0):
+        self.Peso = Peso
+        self.VelMax = VelMax
+        self.Preco = Preco
+        
+    def Print(self):
+        print('----------------------------------')
+        print('Peso:                ', self.Peso)
+        print('Velocidade Maxima:   ', self.VelMax)
+        print('Preco:               ', self.Preco)
+        print('----------------------------------')
+        
+    class Motor:
+        NumCilindro = 0
+        Potencia = 0
+            
+        def Get(self, NumCilindro = 0, Potencia = 0):
+            self.NumCilindro = NumCilindro
+            self.Potencia = Potencia
+            
+        def Print(self):
+            print('----------------------------------')
+            print('Numero de Cilindros: ', self.NumCilindro)
+            print('Potencia:            ', self.Potencia)
+            print('----------------------------------')
+        
+    class CarroPasseio:
+        Cor = ''
+        Modelo = ''
+        
+        def Get(self, Cor = '', Modelo = ''):
+            self.Cor = Cor
+            self.Modelo = Modelo
+    
+        def Print(self):
+            print('----------------------------------')
+            print('Cor:                 ', self.Cor)
+            print('Modelo:              ', self.Modelo)
+            print('----------------------------------')
+        
+    class Caminhao:
+        Toneladas = 0
+        AlturaMax = 0
+        Comprimento = 0
+        
+        def Get(self, Toneladas = 0, AlturaMax = 0, Comprimento = 0):
+            self.Toneladas = Toneladas
+            self.AlturaMax = AlturaMax
+            self.Comprimento = Comprimento
+    
+        def Print(self):
+            print('----------------------------------')
+            print('Toneladas:           ', self.Toneladas)
+            print('Altura Maxima:       ', self.AlturaMax)
+            print('Comprimento:         ', self.Comprimento)
+            print('----------------------------------')
+            
+print('--------------------------------------------------------------------')
+print('Veiculo 1')
+Veiculo1 = Veiculo()
+Veiculo1.Get(1000, 150, 15000)
+Veiculo1.Print()
+
+Veiculo11 = Veiculo1.CarroPasseio()
+Veiculo11.Get('Vermelho', 'Corsa')
+Veiculo11.Print()
+
+Veiculo12 = Veiculo.Motor()
+Veiculo12.Get('1000', '250')
+Veiculo12.Print()
+print('--------------------------------------------------------------------')
+
+print('--------------------------------------------------------------------')
+print('Veiculo 2')
+Veiculo2 = Veiculo()
+Veiculo2.Get(2000, 300, 45000)
+Veiculo2.Print()
+
+Veiculo21 = Veiculo2.CarroPasseio()
+Veiculo21.Get('Preto', 'Astra')
+Veiculo21.Print()
+
+Veiculo22 = Veiculo.Motor()
+Veiculo22.Get('2000', '350')
+Veiculo22.Print()
+print('--------------------------------------------------------------------')
+
+print('--------------------------------------------------------------------')
+print('Veiculo 3')
+Veiculo3 = Veiculo()
+Veiculo3.Get(3000, 75, 30000)
+Veiculo3.Print()
+
+Veiculo31 = Veiculo3.Caminhao()
+Veiculo31.Get(2, 2, 22)
+Veiculo31.Print()
+
+Veiculo32 = Veiculo.Motor()
+Veiculo32.Get('1500', '150')
+Veiculo32.Print()
+print('--------------------------------------------------------------------')
+
+print('--------------------------------------------------------------------')
+print('Veiculo 4')
+Veiculo4 = Veiculo()
+Veiculo4.Get(4000, 100, 22500)
+Veiculo4.Print()
+
+Veiculo41 = Veiculo4.Caminhao()
+Veiculo41.Get(3, 3, 33)
+Veiculo41.Print()
+
+Veiculo42 = Veiculo.Motor()
+Veiculo42.Get('500', '75')
+Veiculo42.Print()
+print('--------------------------------------------------------------------')

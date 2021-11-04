@@ -1,0 +1,28 @@
+Matriz1 = []
+Matriz2 = []
+Matriz3 = []
+X = 1
+
+for linha in range (3):
+    Matriz_Temp1 = []
+    for coluna in range (3):
+        Matriz_Temp1.append(X)
+        X = X + 1
+    Matriz1.append(Matriz_Temp1)
+    
+for linha in range (3):
+    Matriz_Temp2 = []
+    for coluna in range (3):
+        Matriz_Temp2.append(X)
+        X = X + 1
+    Matriz2.append(Matriz_Temp2)
+
+for linha in range (3):
+    Matriz_Temp3 = []
+    for coluna in range (3):
+        Matriz_Temp3.append((Matriz1[linha][0])*(Matriz2[0][coluna]) +
+                            (Matriz1[linha][1])*(Matriz2[1][coluna]) +
+                            (Matriz1[linha][2])*(Matriz2[2][coluna]))
+    Matriz3.append(Matriz_Temp3)
+
+print(Matriz3)

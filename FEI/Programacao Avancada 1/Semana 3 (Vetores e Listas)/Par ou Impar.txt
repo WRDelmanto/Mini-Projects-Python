@@ -1,0 +1,16 @@
+Lista = []
+Par = []
+Impar = []
+
+for X in range(20):
+    Entrada = int(input())
+    Lista.append(Entrada)
+    
+    if Entrada%2 == 0:
+        Par.append(Entrada)
+    else:
+        Impar.append(Entrada)
+
+print(*Lista)
+print(*Impar)
+print(*Par)

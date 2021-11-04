@@ -1,0 +1,6 @@
+Nome_Completo = str(input(''))
+Nome_Split = Nome_Completo.split(' ')
+
+Nome_Novo = Nome_Split[Nome_Completo.count(' ')] + ', ' + Nome_Split[0] + '.'
+
+print(Nome_Novo)

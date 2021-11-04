@@ -1,0 +1,18 @@
+Matriz = []
+Matriz_Transp = []
+X = 1
+
+for linha in range (5):
+    Matriz_Temp = []
+    for coluna in range (5):
+        Matriz_Temp.append(X)
+        X = X + 1
+    Matriz.append(Matriz_Temp)
+    
+for linha in range (5):
+    Matriz_Temp = []
+    for coluna in range (5):
+        Matriz_Temp.append(Matriz[coluna][linha])
+    Matriz_Transp.append(Matriz_Temp)
+
+print(Matriz_Transp)

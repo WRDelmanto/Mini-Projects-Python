@@ -1,0 +1,158 @@
+# Infelizmente todo o estoque se apaga a cada execução.
+Stock = {}
+while True:
+    
+    def Item_Insert():
+        print('---------------------------------')
+        
+        Item = str(input('Favor Digitar o Nome do Item: '))
+        Quantidade = str(input('Favor Digitar a Quantidade do Item: '))
+        Preco = str(input('Favor Digitar o Preço do Item: '))
+        
+        print('')
+        print('---------------------------------')
+        
+        if Item and Quantidade and Preco:
+            if Item in Stock:
+                print('Item Ja Existente')
+            else:
+                Stock[Item] = [Quantidade, Preco]
+                print(Item, 'Adicionado')
+            
+        else:
+            print('Valores Inseridos Invalidos')
+        
+    def Item_Remove():
+        print('---------------------------------')
+        
+        if Stock:
+            Item = str(input('Favor Digitar o Nome do Item: '))
+        
+            if Item in Stock:  
+                Stock.pop(Item)
+                print(Item, 'Removido')
+            else:
+                print('Item Não Existente')
+        else:
+            print('Não Existem Itens em Estoque')
+        
+        print('---------------------------------')
+        
+    def Item_Quantity_Modify():
+        print('---------------------------------')
+        
+        if Stock != {}:
+            for Item in Stock:
+                QP = Stock[Item]
+                Quantidade = QP[0]
+                Preco = QP[1]
+                print(Item, ' - ', Quantidade, ' - ', Preco)
+                
+            Chosen_Item = str(input('Favor Digitar o Nome do Item: '))
+            
+            if Chosen_Item in Stock:
+                Chosen_Quantidade = str(input('Favor Digitar a Nova Quantidade: '))
+                
+                for Item in Stock:
+                    QP = Stock[Item]
+                    Quantidade = QP[0]
+                    Preco = QP[1]
+                    
+                    if Item == Chosen_Item:
+                        Stock[Chosen_Item] = [Chosen_Quantidade, Preco]
+                        print('A Quantidade do Item ', Item, ' Foi Modificada para ', Chosen_Quantidade)
+                
+            else:
+                print('Valores Inseridos Invalidos')
+                
+        else:
+            print('Não Existem Itens em Estoque')
+            
+        print('---------------------------------')
+        
+    def Item_Price_Modify():
+        print('---------------------------------')
+        
+        if Stock != {}:
+            for Item in Stock:
+                QP = Stock[Item]
+                Quantidade = QP[0]
+                Preco = QP[1]
+                print(Item, ' - ', Quantidade, ' - ', Preco)
+                
+            Chosen_Item = str(input('Favor Digitar o Nome do Item: '))
+            
+            if Chosen_Item in Stock:
+                Chosen_Preco = str(input('Favor Digitar o Novo Preço: '))
+                
+                for Item in Stock:
+                    QP = Stock[Item]
+                    Quantidade = QP[0]
+                    Preco = QP[1]
+                    
+                    if Item == Chosen_Item:
+                        Stock[Chosen_Item] = [Quantidade, Chosen_Preco]
+                        print('O Preço do Item ', Item, ' Foi Modificado para ', Chosen_Preco)
+                
+            else:
+                print('Valores Inseridos Invalidos')
+                
+        else:
+            print('Não Existem Itens em Estoque')
+            
+        print('---------------------------------')
+    
+    def Show_Stock():
+        print('---------------------------------')
+        
+        if Stock != {}:
+            print('Item - Quantidade - Preço')
+            for Item in Stock:
+                QP = Stock[Item]
+                Quantidade = QP[0]
+                Preco = QP[1]
+                print(Item, ' - ', Quantidade, ' - ', Preco)
+        else:
+            print('Não Existem Itens em Estoque')
+            
+        print('---------------------------------')
+        
+    print('---------------------------------')
+    print('Escolha uma das Seguintes Opções:')
+    print('1 - Inserir Item')
+    print('2 - Remover Item')
+    print('3 - Modificar Item')
+    print('4 - Imprimir Estoque')
+    print('---------------------------------')
+    
+    Entrada = int(input('->'))
+    
+    if Entrada == 1:
+        Item_Insert()
+        
+    if Entrada == 2:
+        Item_Remove()
+    
+    if Entrada == 3:
+        print('---------------------------------')
+        print('Escolha uma das Seguintes Opções:')
+        print('1 - Modificar a Quantidade de um Item')
+        print('2 - Modificar o Preço de um Item')
+        print('---------------------------------')
+        
+        Nova_Entrada = int(input(''))
+    
+        if Nova_Entrada == 1:
+            Item_Quantity_Modify()
+        
+        if Nova_Entrada == 2:
+            Item_Price_Modify()
+            
+        if Nova_Entrada not in (1, 2):
+            print('Escolha Invalida')
+            
+    if Entrada == 4:
+        Show_Stock()
+            
+    if Entrada not in (1, 2, 3, 4):
+        print('Escolha Invalida')

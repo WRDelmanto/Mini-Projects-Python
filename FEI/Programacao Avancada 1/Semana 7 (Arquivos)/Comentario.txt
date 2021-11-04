@@ -1,0 +1,29 @@
+import os
+import sys
+
+Data_Write = ''
+
+Entrada = str(input('Favor Inserir o Nome do Arquivo de Entrada: '))
+Saida = str(input('Favor Inserir o Nome do Arquivo de Saida: '))
+
+if os.path.isfile(Entrada) == False:
+    print('O Arquivo ' + Entrada + ' Não Existe')
+    sys.exit()
+    
+if os.path.isfile(Saida) == False:
+    print('O Arquivo ' + Saida + ' Não Existe')
+    sys.exit()
+
+Entrada_Open = open(Entrada, 'r', encoding="utf-8")
+Entrada_RL = Entrada_Open.readlines()
+
+for Linhas in Entrada_RL:
+    Linhas = Linhas.replace('\n', '')
+    if (Linhas[0:1]) != '#':
+        Data_Write = Data_Write + Linhas + '\n'
+        
+Entrada_Open.close()    
+
+Saida_Open = open(Saida, 'w', encoding="utf-8")
+Saida_Open.write(Data_Write)
+Saida_Open.close()

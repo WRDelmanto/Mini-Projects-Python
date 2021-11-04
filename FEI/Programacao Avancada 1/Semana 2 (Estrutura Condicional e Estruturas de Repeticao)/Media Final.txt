@@ -1,0 +1,10 @@
+N1 = int(input ('Digite a nota 1: '))
+N2 = int(input ('Digite a nota 2: '))
+N3 = int(input ('Digite a nota 3: '))
+
+Media_Final = (N1 + 2*N2 + 3*N3)/6
+
+if Media_Final >= 5:    
+    print('Aluno aprovado - Média: %.2f' %Media_Final)
+else :
+    print('Aluno reprovado - Média: %.2f' %Media_Final)

@@ -1,0 +1,52 @@
+class Contagem_Despesas:
+    Caderno_de_Despesas = []
+    CPF = ''
+    Nome_Despesa = ''
+    Valor_Despesa = 0.0
+    Dia = 0
+    Mes = 0
+    Ano = 0
+    
+    def __init__(self, CPF = ''):
+        self.CPF = CPF
+        self.Caderno_de_Despesas = []
+        
+    def Adiciona_Despesa(self, Nome_Despesa, Valor_Despesa = 0.0, Dia = 0, Mes = 0, Ano = 0):        
+        L = [Nome_Despesa, Valor_Despesa, Dia, Mes, Ano]
+        
+        self.Caderno_de_Despesas.append(L)
+        
+    def Totaliza_Mes_Ano(self, Mes = 0, Ano = 0):
+        Contagem = 0.0
+        
+        print('---------------------------------------')
+        print('CPF: ', self.CPF)
+        print('Mes: ', Mes)
+        print('Ano: ', Ano)
+        print('')
+        
+        print('Gastos:')
+        print('---------------------------------------')
+        for i in self.Caderno_de_Despesas:
+            if i[3] == Mes and i[4] == Ano:
+                Contagem = Contagem + i[1]
+                print(i)
+                
+        print('---------------------------------------')
+        print('Valor Total: R$', Contagem)
+        print('---------------------------------------')
+        
+CPF1 = Contagem_Despesas('CPF1')
+CPF2 = Contagem_Despesas('CPF2')
+
+CPF1.Adiciona_Despesa('Padaria', 15.0, 21, 10, 2020)
+CPF1.Adiciona_Despesa('Mercado', 25.0, 22, 11, 2020)
+
+CPF1.Totaliza_Mes_Ano(10, 2020)
+CPF1.Totaliza_Mes_Ano(11, 2020)
+
+CPF2.Adiciona_Despesa('Farmacia', 10.0, 21, 10, 2020)
+CPF2.Adiciona_Despesa('Cinema', 20.0, 22, 11, 2020)
+
+CPF2.Totaliza_Mes_Ano(10, 2020)
+CPF2.Totaliza_Mes_Ano(11, 2020)
