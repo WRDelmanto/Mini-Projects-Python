@@ -1,10 +1,4 @@
-#Use these commands in Kali to install required software:
-#  sudo apt install python3-pip
-#  pip install python-nmap
-
-# Import nmap so we can use it for the scan
 import nmap
-# We need to create regular expressions to ensure that the input is correctly formatted.
 import re
 
 # Regular Expression Pattern to recognise IPv4 addresses.
@@ -20,20 +14,6 @@ port_max = 65535
 # You'll need to install the following to get it work on Linux:
 # Step 1: sudo apt install python3-pip
 # Step 2: pip install python-nmap
-
-
-# Basic user interface header
-print(r"""______            _     _  ______                 _           _ 
-|  _  \          (_)   | | | ___ \               | |         | |
-| | | |__ ___   ___  __| | | |_/ / ___  _ __ ___ | |__   __ _| |
-| | | / _` \ \ / / |/ _` | | ___ \/ _ \| '_ ` _ \| '_ \ / _` | |
-| |/ / (_| |\ V /| | (_| | | |_/ / (_) | | | | | | |_) | (_| | |
-|___/ \__,_| \_/ |_|\__,_| \____/ \___/|_| |_| |_|_.__/ \__,_|_|""")
-print("\n****************************************************************")
-print("\n* Copyright of David Bombal, 2021                              *")
-print("\n* https://www.davidbombal.com                                  *")
-print("\n* https://www.youtube.com/davidbombal                          *")
-print("\n****************************************************************")
 
 open_ports = []
 # Ask user to input the ip address they want to scan.
