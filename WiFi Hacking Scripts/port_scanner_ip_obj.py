@@ -1,9 +1,5 @@
-# The socket module in Python is an interface to the Berkeley sockets API.
 import socket
-# We import the ipaddress module. We want to use the ipaddress.ip_address(address) 
-# method to see if we can instantiate a valid ip address to test.
 import ipaddress
-# We need to create regular expressions to ensure that the input is correctly formatted.
 import re
 
 # Regular Expression Pattern to extract the number of ports you want to scan. 
@@ -16,19 +12,6 @@ port_max = 65535
 # This script uses the socket api to see if you can connect to a port on a specified ip address. 
 # Once you've successfully connected a port is seen as open.
 # This script does not discriminate the difference between filtered and closed ports.
-
-# Basic user interface header
-print(r"""______            _     _  ______                 _           _ 
-|  _  \          (_)   | | | ___ \               | |         | |
-| | | |__ ___   ___  __| | | |_/ / ___  _ __ ___ | |__   __ _| |
-| | | / _` \ \ / / |/ _` | | ___ \/ _ \| '_ ` _ \| '_ \ / _` | |
-| |/ / (_| |\ V /| | (_| | | |_/ / (_) | | | | | | |_) | (_| | |
-|___/ \__,_| \_/ |_|\__,_| \____/ \___/|_| |_| |_|_.__/ \__,_|_|""")
-print("\n****************************************************************")
-print("\n* Copyright of David Bombal, 2021                              *")
-print("\n* https://www.davidbombal.com                                  *")
-print("\n* https://www.youtube.com/davidbombal                          *")
-print("\n****************************************************************")
 
 open_ports = []
 # Ask user to input the ip address they want to scan.
