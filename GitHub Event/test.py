@@ -16,6 +16,5 @@ logger.addHandler(file_handler)
 def do_logging():
     logger.info("test")
 
-
 if __name__ == '__main__':
     do_logging()

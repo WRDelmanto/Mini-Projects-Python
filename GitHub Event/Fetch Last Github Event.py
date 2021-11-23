@@ -19,8 +19,6 @@ def fetch_github_events():
         logger.info(last_event)
     else:
         logger.error('Could not get last event')
-    
 
 if __name__ == '__main__':
     fetch_github_events()
-    
