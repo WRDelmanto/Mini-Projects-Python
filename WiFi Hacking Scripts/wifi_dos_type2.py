@@ -37,20 +37,6 @@ def check_for_essid(essid, lst):
 
     return check_status
 
-# Basic user interface header
-print(r"""______            _     _  ______                 _           _ 
-|  _  \          (_)   | | | ___ \               | |         | |
-| | | |__ ___   ___  __| | | |_/ / ___  _ __ ___ | |__   __ _| |
-| | | / _` \ \ / / |/ _` | | ___ \/ _ \| '_ ` _ \| '_ \ / _` | |
-| |/ / (_| |\ V /| | (_| | | |_/ / (_) | | | | | | |_) | (_| | |
-|___/ \__,_| \_/ |_|\__,_| \____/ \___/|_| |_| |_|_.__/ \__,_|_|""")
-print("\n****************************************************************")
-print("\n* Copyright of David Bombal, 2021                              *")
-print("\n* https://www.davidbombal.com                                  *")
-print("\n* https://www.youtube.com/davidbombal                          *")
-print("\n****************************************************************")
-
-
 # If the user doesn't run the program with super user privileges, don't allow them to continue.
 if not 'SUDO_UID' in os.environ.keys():
     print("Try running this program with sudo.")
@@ -190,6 +176,3 @@ except KeyboardInterrupt:
     # We run a subprocess.run command where we stop monitoring mode on the network adapter.
     subprocess.run(["airmon-ng", "stop", hacknic + "mon"])
     print("Thank you! Exiting now")
-
-
-    
