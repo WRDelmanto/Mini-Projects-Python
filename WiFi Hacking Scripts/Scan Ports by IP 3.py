@@ -1,8 +1,7 @@
 import nmap
+import ipaddress
 import re
 
-# Regular Expression Pattern to recognise IPv4 addresses.
-ip_add_pattern = re.compile("^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
 # Regular Expression Pattern to extract the number of ports you want to scan. 
 # You have to specify <lowest_port_number>-<highest_port_number> (ex 10-100)
 port_range_pattern = re.compile("([0-9]+)-([0-9]+)")
@@ -15,22 +14,29 @@ port_max = 65535
 # Step 1: sudo apt install python3-pip
 # Step 2: pip install python-nmap
 
-open_ports = []
 # Ask user to input the ip address they want to scan.
 while True:
     ip_add_entered = input("\nPlease enter the ip address that you want to scan: ")
-    if ip_add_pattern.search(ip_add_entered):
-        print(f"{ip_add_entered} is a valid ip address")
+    # If we enter an invalid ip address the try except block will go to the except block and say you entered an invalid ip address.
+    try:
+        ip_address_obj = ipaddress.ip_address(ip_add_entered)
+        # The following line will only execute if the ip is valid.
+        print("You entered a valid ip address.")
         break
+    except:
+        print("You entered an invalid ip address")
+
 
 while True:
-    # You can scan 0-65535 ports. This scanner is basic and doesn't use multithreading so scanning 
-    # all the ports is not advised.
+    # You can scan 0-65535 ports. This scanner is basic and doesn't use multithreading so scanning all the ports is not advised.
     print("Please enter the range of ports you want to scan in format: <int>-<int> (ex would be 60-120)")
     port_range = input("Enter port range: ")
+    # We pass the port numbers in by removing extra spaces that people sometimes enter. So if you enter 80 - 90 instead of 80-90 the program will still work.
     port_range_valid = port_range_pattern.search(port_range.replace(" ",""))
     if port_range_valid:
+        # We're extracting the low end of the port scanner range the user want to scan.
         port_min = int(port_range_valid.group(1))
+        # We're extracting the upper end of the port scanner range the user want to scan.
         port_max = int(port_range_valid.group(2))
         break
 
@@ -50,4 +56,3 @@ for port in range(port_min, port_max + 1):
     except:
         # We cannot scan some ports and this ensures the program doesn't crash when we try to scan them.
         print(f"Cannot scan port {port}.")
-        
