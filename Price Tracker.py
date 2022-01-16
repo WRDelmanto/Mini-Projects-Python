@@ -1,13 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 import unicodedata
-
-from send_email import send_email
+import smtplib
+import ssl
 
 
 HEADERS = ({'User-Agent':
             'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
             'Accept-Language': 'en-US, en;q=0.5'})
+
 
 def get_product_info(url):
     page = requests.get(url, headers=HEADERS)
@@ -18,7 +19,7 @@ def get_product_info(url):
         price_str = soup.find(id='priceblock_ourprice').get_text()
     except:
         return None, None, None
-    
+
     try:
         # #soup.select('#availability .a-color-price')[0].get_text().strip()
         soup.select('#availability .a-color-success')[0].get_text().strip()
@@ -32,13 +33,31 @@ def get_product_info(url):
         price = float(price)
     except:
         return None, None, None
-    
+
     return title, price, available
+
+
+def send_email(message):
+    port = 465  # For SSL
+    smtp_server = "smtp.gmail.com"
+    sender_email = "sender@gmail.com"
+    receiver_email = "receiver@gmail.com"
+    password = "your_password"
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+        try:
+            server.login(sender_email, password)
+            res = server.sendmail(sender_email, receiver_email, message)
+            print('email sent!')
+        except:
+            print("could not login or send the mail.")
+
 
 if __name__ == '__main__':
     url = "https://www.amazon.com/Samsung-Factory-Unlocked-Smartphone-Pro-Grade/dp/B08FYTSXGQ/ref=sr_1_1_sspa?dchild=1&keywords=samsung%2Bs20&qid=1602529762&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUExOTdFSllWVkhNMFRFJmVuY3J5cHRlZElkPUEwNDAyODczMktKMDdSVkVHSlA2WCZlbmNyeXB0ZWRBZElkPUEwOTc5NTcxM1ZXRlJBU1k1U0ZUSyZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU="
     products = [(url, 700)]
-    
+
     products_below_limit = []
     for product_url, limit in products:
         title, price, available = get_product_info(product_url)
@@ -48,10 +67,10 @@ if __name__ == '__main__':
     if products_below_limit:
         message = "Subject: Price below limit!\n\n"
         message += "Your tracked products are below the given limit!\n\n"
-        
+
         for url, title, price in products_below_limit:
             message += f"{title}\n"
             message += f"Price: {price}\n"
             message += f"{url}\n\n"
-        
+
         send_email(message)
