@@ -10,5 +10,5 @@ def fahrenheitToCelsius(fahrenheit):
     print(celsius)
 
 
-celsiusToFahrenheit(40.15)
-fahrenheitToCelsius(104.27)
+celsiusToFahrenheit(20)
+fahrenheitToCelsius(68)
