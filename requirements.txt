@@ -2,3 +2,10 @@ opencv-python==4.7.0.72
 pywhatkit==4.6
 moviepy==1.0.3
 pytube==12.1.3
+captcha==0.4
+langdetect==1.0.9
+cryptography==40.0.2
+requests==2.29.0
+speedtest-cli==2.1.3
+gTTS==2.3.2
+playsound==1.3.0
