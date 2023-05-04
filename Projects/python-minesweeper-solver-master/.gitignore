@@ -1,0 +1,11 @@
+output
+output.log
+test.py
+test2.py
+test3.py
+testRead.py
+tiles.png
+__pycache__/
+.vscode/
+img/
+instruction.md
