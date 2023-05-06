@@ -1,6 +1,7 @@
 captcha==0.4
 cryptography==40.0.2
 gTTS==2.3.2
+keyboard==0.13.5
 langdetect==1.0.9
 moviepy==1.0.3
 opencv-python==4.7.0.72
