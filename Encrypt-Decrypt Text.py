@@ -35,5 +35,5 @@ key = "b" + seed + "='"
 
 encryptMessage("This is a Test", key)
 
-encrypted_message_test = b'gAAAAABkVUspFY-MFPL2XwQH8Mhlpr1QsHn5KNu3N9TR3IpBdzXGDwQCAkZAxNoc2isd_CIetp9xfeciFpIfnoKAEn0bCfFTuw=='
+encrypted_message_test = "b'gAAAAABkVUspFY-MFPL2XwQH8Mhlpr1QsHn5KNu3N9TR3IpBdzXGDwQCAkZAxNoc2isd_CIetp9xfeciFpIfnoKAEn0bCfFTuw=='"
 dencryptMessage(encrypted_message_test, key)
