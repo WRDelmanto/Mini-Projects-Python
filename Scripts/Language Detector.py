@@ -1,7 +1,12 @@
 from langdetect import detect
 
-phase = "This is a test"
 
-language = detect(phase)
+def detectLanguage(text):
+    # Detect the language
+    language = detect(text)
 
-print(language)
+    # Print the outcome
+    print(language)
+
+
+detectLanguage("This is a test")

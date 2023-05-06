@@ -1,10 +1,15 @@
 from captcha.image import ImageCaptcha
 
-path = "captcha.png"
-captcha_text = "ABC1234"
 
-image = ImageCaptcha(width=280, height=90)
+def generateImageCaptcha(captcha_text):
+    # Set the path where the generated image will be saved
+    path = "captcha.png"
 
-data = image.generate(captcha_text)
+    # Create an ImageCaptcha object with the specified width and height
+    image = ImageCaptcha(width=280, height=90)
 
-image.write(captcha_text, path)
+    # Write the captcha image to the specified path
+    image.write(captcha_text, path)
+
+
+generateImageCaptcha("ABC1234")

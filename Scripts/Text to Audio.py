@@ -2,20 +2,19 @@
 from gtts import gTTS
 from playsound import playsound
 
-# File name
-fileName = 'test.mp3'
 
-# Text input
-text = "Testing, 1, 2, 3"
+def textToAudio(text, language):
+    # File name
+    fileName = "test.mp3"
 
-# Language selection
-language = 'en'
+    # Creating an instance of the gTTS class
+    speech = gTTS(text=text, lang=language, slow=False)
 
-# Creating an instance of the gTTS class
-speech = gTTS(text=text, lang=language, slow=False)
+    # Saving the converted audio file
+    speech.save(fileName)
 
-# Saving the converted audio file
-speech.save(fileName)
+    # Playing the converted audio file
+    playsound(fileName)
 
-# Playing the converted audio file
-playsound(fileName)
+
+textToAudio("Testing, 1, 2, 3", "en")

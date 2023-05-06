@@ -1,8 +1,10 @@
 import winsound
 
-frequency = int(10000)  # Hertz
-duration = int(2000)  # Milliseconds
-numberOfTimes = 1
 
-for i in range(0, numberOfTimes):
-    winsound.Beep(frequency, duration)
+def makeBeepSound(frequency: int, duration: int, numberOfTimes: int):
+    for beep in range(numberOfTimes):
+        # Play the beep sound
+        winsound.Beep(frequency, duration)
+
+
+makeBeepSound(10000, 1000, 1)
