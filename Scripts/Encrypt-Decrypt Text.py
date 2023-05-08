@@ -1,6 +1,11 @@
 from cryptography.fernet import Fernet
 
 
+def generateKey():
+    # Generate key
+    return Fernet.generate_key()
+
+
 def encryptMessage(message, key=Fernet.generate_key()):
     fernet = Fernet(key)
 
@@ -16,24 +21,31 @@ def encryptMessage(message, key=Fernet.generate_key()):
     # Print the encrypted message
     print("Encrypted Message: ", encrypted_message)
 
+    # Return the encrypted message
+    return encrypted_message
+
 
 def dencryptMessage(encrypted_message: bytes, key):
     fernet = Fernet(key)
 
     # Dencrypt the message
-    decrypted_message = fernet.decrypt(encrypted_message).decode()
+    decrypted_message = fernet.decrypt(encrypted_message).decode()[1:]
 
     # Print the decripted message
     print("Decrypted Message: ", decrypted_message)
 
+    # Return the dencrypted message
+    return decrypted_message
 
+
+# If you want to generate your own key
 # The Seed must have 42 characters
-seed = 'abcdefghijklmnopqrstuvwxyz0123456789012345'
-
+# seed = 'abcdefghijklmnopqrstuvwxyz0123456789012345'
 # The Key must have 45 characters and start with a B(bytes) and end with ='
-key = "b" + seed + "='"
+# key = "b" + seed + "='"
 
-encryptMessage("This is a Test", key)
+# Or let the script generate a key for you
+key = generateKey()
 
-encrypted_message_test = "b'gAAAAABkVUspFY-MFPL2XwQH8Mhlpr1QsHn5KNu3N9TR3IpBdzXGDwQCAkZAxNoc2isd_CIetp9xfeciFpIfnoKAEn0bCfFTuw=='"
-dencryptMessage(encrypted_message_test, key)
+encrypted_message = encryptMessage("This is a Test", key)
+decrypted_message = dencryptMessage(encrypted_message, key)
