@@ -76,5 +76,5 @@ def playPianoTiles(stop_key, tile_1_x, tile_2_x, tile_3_x, tile_4_x, tiles_y, ti
 
 
 # Recomended: "Generate Screenshot.py" to help set the coordinates
-# (x1, x2, x3, x4, y) (r,g,b)
+# https://www.agame.com/game/magic-piano-tiles
 playPianoTiles("q", 600, 690, 775, 850, 450, 0, 0, 0)
