@@ -1,6 +1,7 @@
-import pyautogui
 import time
+
 import keyboard
+import pyautogui
 import win32api
 import win32con
 
