@@ -5,34 +5,6 @@ import pyautogui
 import win32api
 import win32con
 
-# Tile 1 Position: X:  581 Y:  400 RGB: ( 77,  80, 115)
-# Tile 2 Position: X:  682 Y:  400 RGB: (  0,   0,   0)
-# Tile 3 Position: X:  770 Y:  400 RGB: ( 79,  82, 116)
-# Tile 4 Position: X:  869 Y:  400 RGB: ( 80,  83, 116)
-
-
-def showPixelCoordinates(stop_key):
-    # Check if it should stop the program
-    while keyboard.is_pressed(stop_key) == False:
-        # Get the mouse pixel coordinates
-        x, y = pyautogui.position()
-
-        # Print the coordinates
-        print("X: ", x, ", Y: ", y)
-
-
-def showPixelColor(stop_key):
-    # Check if it should stop the program
-    while keyboard.is_pressed(stop_key) == False:
-        # Get the mouse pixel coordinates
-        x, y = pyautogui.position()
-
-        # Get the mouse pixel coordinates
-        pixel_color = pyautogui.screenshot().getpixel((x, y))
-
-        # Print the coordinates
-        print("Color: ", pixel_color)
-
 
 def clickEvent(x, y):
     # Set the cursor position to the given X and Y coordinates
@@ -103,6 +75,6 @@ def playPianoTiles(stop_key, tile_1_x, tile_2_x, tile_3_x, tile_4_x, tiles_y, ti
             print("Tile 4 pressed")
 
 
-# showPixelCoordinates("q")
-# showPixelColor("q")
-playPianoTiles("q", -1101, -1012, -925, -840, 575, 0, 0, 0)
+# Recomended: "Generate Screenshot.py" to help set the coordinates
+# (x1, x2, x3, x4, y) (r,g,b)
+playPianoTiles("q", 600, 690, 775, 850, 450, 0, 0, 0)
