@@ -1,5 +1,0 @@
-def media(N1, N2, N3, Tipo):
-    if (Tipo == 'A'):
-        return((N1+N2+N3)/3)
-    else:
-        return(((N1*5)+(N2*3)+(N3*2))/10)

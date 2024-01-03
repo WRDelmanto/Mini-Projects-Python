@@ -1,5 +1,0 @@
-Temperatura_F = int(input ('Digite a temperatura em graus Fahrenheit: '))
-
-Temperatura_C = (5 * (Temperatura_F-32) / 9)
-
-print('Temperatura em graus Celcius = %.f' %Temperatura_C)

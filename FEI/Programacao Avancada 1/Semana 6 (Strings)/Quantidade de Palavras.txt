@@ -1,7 +1,0 @@
-Contagem = 0
-
-Frase = str(input(''))
-
-Contagem = Frase.count(' ') + 1
-
-print(Contagem)

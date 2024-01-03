@@ -1,8 +1,0 @@
-import os
-
-Entrada = str(input(''))
-
-if os.path.isfile(Entrada):
-    print(True)
-else:
-    print(False)

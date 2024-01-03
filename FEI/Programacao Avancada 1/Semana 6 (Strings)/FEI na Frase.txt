@@ -1,8 +1,0 @@
-Contagem = 0
-
-Frase = str(input(''))
-Frase_Upper_Split = Frase.upper().split(' ')
-
-Contagem = Frase_Upper_Split.count('FEI')
-
-print(Contagem)

@@ -1,9 +1,0 @@
-custo_por_dia = 60
-custo_por_KM = 0.15
-
-KM_Percorridos = int(input ('Digite os km:'))
-Dias_Alugados = int(input ('Digite os dias:'))
-
-Valor_Total = (custo_por_dia*Dias_Alugados + custo_por_KM*KM_Percorridos)
-
-print('R$ %.2f' %Valor_Total)
