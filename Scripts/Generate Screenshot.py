@@ -9,4 +9,5 @@ def generateScreenshot(path, region):
     screenshot.save(path)
 
 
-generateScreenshot("temp.png", (660, 370, 600, 420))
+# Region = left, top, width and height
+generateScreenshot("temp.png", (0, 0, 1920, 1080))
